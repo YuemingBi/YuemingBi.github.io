@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>BiYueming</title>
+  <title>记录学习点滴</title>
   
   
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-04-27T10:27:47.357Z</updated>
+  <updated>2019-04-28T13:05:19.416Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>最简单的方法重装win10系统</title>
+    <link href="http://yoursite.com/2019/04/27/%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E6%96%B9%E6%B3%95%E9%87%8D%E8%A3%85win10%E7%B3%BB%E7%BB%9F/"/>
+    <id>http://yoursite.com/2019/04/27/最简单的方法重装win10系统/</id>
+    <published>2019-04-27T13:53:41.000Z</published>
+    <updated>2019-04-28T13:05:19.416Z</updated>
+    
+    <content type="html"><![CDATA[<p><font size="3">到Microsoft官网下载安装工具,用这个工具安装win10系统非常方便。利用此工具不仅可以在原有系统升级到win10，也可以用来做U盘启动项。</font><br><code>https://www.microsoft.com/zh-cn/software-download/windows10</code></p><p><img src="http://pqk5lbhsc.bkt.clouddn.com/windows2-32.jpg" alt="cmd-markdown-logo"></p><p><strong><font size="3">操作步骤</font></strong></p><p>1.如果电脑系统还可以进入，那就没必要做U盘启动项，直接在现有的系统里重装win10。</p><p> (1)右键，以管理员身份运行下载好的工具，利用工具下载Windows10原版系统。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/windows2-38.jpg" alt="cmd-markdown-logo"></p><p> (2)选择第二个(下载IOS文件)，点下一步。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/windows2-34.jpg" alt="cmd-markdown-logo"></p><p> (3)把“对这台电脑使用推荐的选项”对号去掉，就可以选择想要的系统。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/windows2-35.jpg" alt="cmd-markdown-logo"></p><p> (4)此处选择IOS文件(U盘在后文中讲解)，点下一步。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/windows2-36.jpg" alt="cmd-markdown-logo"></p><p> (5)开始下载win10系统，这系统是原版的系统，个人认为比那些在其他网站上下载的乱七八糟的系统要好。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/windows2-37.jpg" alt="cmd-markdown-logo"></p><p> (6)将下载好的IOS文件解压到C盘之外的一个文件夹，这些文件就是安装系统所需要的文件啦。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/windows2-.jpg" alt="cmd-markdown-logo"></p><p> (7)右键“setup.exe”，以管理员身份运行，就开始安装系统了。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/windows2-1.jpg" alt="cmd-markdown-logo"></p><p> (8)顺利进入安装向导，检查安装环境。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/windows2-2.jpg" alt="cmd-markdown-logo"></p><p> (9)不更新，直接安装，速度更快，点击下一步。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/windows2-3.jpg" alt="cmd-markdown-logo"></p><p> (10)这里选择win10专业版，可以根据自己的情况选择。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/windows2-4.jpg" alt="cmd-markdown-logo"></p><p> (11)点击下一步。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/windows2-5.jpg" alt="cmd-markdown-logo"></p><p> (12)看个人需要是否选择保留文件。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/windows2-6.jpg" alt="cmd-markdown-logo"></p><p> (13)确认无误后安装，点击下一步。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/windows2-7.jpg" alt="cmd-markdown-logo"></p><p> (14)开始安装，期间会多次重启，请耐心等待。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/windows2-8.jpg" alt="cmd-markdown-logo"></p><p> (15)这个不解释。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/windows2-9.jpg" alt="cmd-markdown-logo"></p><p> (16)不解释。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/windows2-10.jpg" alt="cmd-markdown-logo"></p><p> (17)不解释。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/windows2-11.jpg" alt="cmd-markdown-logo"></p><p> (18)选择针对个人。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/windows2-12.jpg" alt="cmd-markdown-logo"></p><p> (19)创建账户和密码。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/windows2-13.jpg" alt="cmd-markdown-logo"></p><p> (20)不解释。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/windows2-14.jpg" alt="cmd-markdown-logo"></p><p> (21)不解释。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/windows2-15.jpg" alt="cmd-markdown-logo"></p><p> (22)选择稍后再做。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/windows2-16.jpg" alt="cmd-markdown-logo"></p><p> (23)根据需要选择。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/windows2-17.jpg" alt="cmd-markdown-logo"></p><p> (24)一些设置。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/windows2-18.jpg" alt="cmd-markdown-logo"></p><p> (25)配置电脑硬件，等一会就好了。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/windows2-19.jpg" alt="cmd-markdown-logo"></p><p><img src="http://pqk5lbhsc.bkt.clouddn.com/windows2-20.jpg" alt="cmd-markdown-logo"></p><p> (26)敬请开始吧！<br><img src="http://pqk5lbhsc.bkt.clouddn.com/windows2-21.jpg" alt="cmd-markdown-logo"></p><p> (27)全新的win10系统！<br><img src="http://pqk5lbhsc.bkt.clouddn.com/windows2-22.jpg" alt="cmd-markdown-logo">，</p><p> (28)设置桌面图标：在桌面右键&gt;个性化&gt;主题&gt;桌面图标设置， 然后勾选你所需要显示的图标即可<br><img src="http://pqk5lbhsc.bkt.clouddn.com/windows2-23.jpg" alt="cmd-markdown-logo"></p><p> (29)查看系统激活情况。右键此电脑&gt;属性查看，新系统是没有激活的，下载一个系统激活软件，进行激活。(此处不做过多讲解)<br><img src="http://pqk5lbhsc.bkt.clouddn.com/windows2-24.jpg" alt="cmd-markdown-logo"></p><p>2.如果你的系统坏了，进不去了，这时你就要用U盘作为启动项安装系统。<br> (1)进入电脑Bios界面，设置引导模式，设置U盘启动。</p><p> (2)借一台同学的电脑，下载安装工具，文章开头已经写到。</p><p> (3)右键，以管理员身份运行下载好的工具，利用工具下载Windows10原版系统。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/windows2-38.jpg" alt="cmd-markdown-logo"></p><p> (4)选择第二个(做系统U盘)，点下一步。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/windows2-34.jpg" alt="cmd-markdown-logo"></p><p> (5)选择系统<br><img src="http://pqk5lbhsc.bkt.clouddn.com/windows2-35.jpg" alt="cmd-markdown-logo"></p><p> (6)选择U盘，之后选择自己插入电脑的U盘，此过程是先下载系统，之后再刻录文件，所以时间比较漫长。如果你有自己的系统文件，比如之前下载IOS文件，就可以用刻录软件将系统直接刻录到U盘里。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/windows2-36.jpg" alt="cmd-markdown-logo"></p><p> (7)将刻录好的U盘插进要装系统的电脑，开机按指定键选择启动项。（不同电脑，按键不同。）<br><img src="http://pqk5lbhsc.bkt.clouddn.com/windows2-41.jpg" alt="cmd-markdown-logo"></p><p> (8)上下键选择U盘，回车进入即可安装系统，之后的步骤与上一种方法相同。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/windows2-40.jpg" alt="cmd-markdown-logo"></p><p> (9)U盘可以选择4G的U盘，刻录完之后就可以用这个U盘随时给电脑装系统啦。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;font size=&quot;3&quot;&gt;到Microsoft官网下载安装工具,用这个工具安装win10系统非常方便。利用此工具不仅可以在原有系统升级到win10，也可以用来做U盘启动项。&lt;/font&gt;&lt;br&gt;&lt;code&gt;https://www.microsoft.com/zh-cn/
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>MBR分区与GPT分区互转方法</title>
@@ -31,20 +52,6 @@
       
         &lt;font size=&quot;3&quot;&gt;系统引导的两种方式：&lt;/font&gt;&lt;br&gt;UEFI启动模式：（GPT分区表格式+ UEFI启动模式+ x64的系统）&lt;br&gt;Legacy启动模式：（MBR主引导记录分区格式+ Legacy启动模式）&lt;br&gt;&lt;br&gt;UEFI是新式的BIOS，Legac
       
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>win10系统安装</title>
-    <link href="http://yoursite.com/2019/04/21/win10%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/"/>
-    <id>http://yoursite.com/2019/04/21/win10系统安装/</id>
-    <published>2019-04-21T15:45:57.000Z</published>
-    <updated>2019-04-21T15:45:57.308Z</updated>
-    
-    <summary type="html">
     
     </summary>
     
