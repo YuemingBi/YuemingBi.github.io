@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>基于legacy引导方式的win7-linux双系统</title>
+      <link href="/2019/04/29/%E5%9F%BA%E4%BA%8Elegacy%E5%BC%95%E5%AF%BC%E6%96%B9%E5%BC%8F%E7%9A%84win7-linux%E5%8F%8C%E7%B3%BB%E7%BB%9F/"/>
+      <url>/2019/04/29/%E5%9F%BA%E4%BA%8Elegacy%E5%BC%95%E5%AF%BC%E6%96%B9%E5%BC%8F%E7%9A%84win7-linux%E5%8F%8C%E7%B3%BB%E7%BB%9F/</url>
+      
+        <content type="html"><![CDATA[<p>写到这篇文章，笔者还是很有感触，因为我在大一的时候给电脑装双系统，用的是上一篇文章win10-linux的常规方法，也是用U盘作为启动项，但死活就是安装不上。之后才发现原因，我电脑的win7系统的引导方式是legacy，而常规方法安装的linux系统恰好是uefi引导方式，硬装是装不上的。如果你的电脑也是legacy引导方式想装双系统，其实很简单，这篇文章就可以解决你的问题。</p><p><strong><font size="3">操作步骤</font></strong></p><p> (1)准备两个东西：<br>    1) ubuntu镜像文件，网上自行下载(最好是到官网上去下载，靠谱)，这里以ubuntu16.04为例。<br>    2) EasyBCD软件，网上自行下载(最好是安装版，不要绿色版)。</p><p> (2)分区。计算机右键-管理-磁盘管理，选中一个磁盘(这里以D盘为例)右键磁盘压缩，压缩空间自己定，这个空间就是给linux系统，最好不要小于20G。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/ubuntu1-1.png" alt="cmd-markdown-logo"></p><p> (3)打开EasyBCD软件，添加linux引导项。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/ubuntu1-2.png" alt="cmd-markdown-logo"></p><p> (4)安装之后，点击配置，进行文件配置，然后就会出现一个menu.lst文件，我们要编辑这个文件 因为系统就是这个文件找到我们的Ubuntu的。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/ubuntu1-3.png" alt="cmd-markdown-logo"></p><p><img src="http://pqk5lbhsc.bkt.clouddn.com/ubuntu1-4.png" alt="cmd-markdown-logo"></p><p>把下面的 英文 复制进去，把原来的全覆盖掉<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title Install Ubuntu</span><br><span class="line">root (hd0,0)</span><br><span class="line">kernel (hd0,0)/vmlinuz.efi boot=casper iso-scan/filename=/ubuntu-16.04.2-desktop-amd64.iso ro quiet splash locale=zh_CN.UTF-8</span><br><span class="line">initrd (hd0,0)/initrd.lz</span><br></pre></td></tr></table></figure></p><p>特别注意:<br> 1)ubuntu-16.04.2-desktop-amd64.iso是你的iso的名字，别写成我的了，这个要改成你的。<br> 2)在64位中casper目录下为vmlinuz.efi，32位的才是vmlinuz（本人亲测，在安装过程中碰到error 15 file not find 错误，就是因为这个问题）<br> 3)对于有的电脑上你的第一个盘符并不是C盘，在磁盘管理中可以看出，所以安装时需将(hd0,0)改为（hd0,1）(假设为第二个)。</p><p> (5)ubuntu-16.04.2-desktop-amd64.iso镜像文件用压缩软件或者虚拟光驱打开，找到casper文件夹，把里面的initrd.lz和vmlinuz.efi解压到C盘，把.disk文件夹也解压到C盘，然后在把ubuntu-16.04.2-desktop-amd64.iso文件也复制到C盘。</p><p> (6)重启，就会看到有2个启动菜单，我们选择NeoGrub引导加载器，过一会就出现界面安装ubuntu系统的界面，后面的教程与上一篇文章一样。</p><p> (7)这个步骤非常重要，安装之后出现桌面，按Ctrl+Alt+T 打开终端，输入代码:sudo umount -l /isodevice这一命令取消掉对光盘所在 驱动器的挂载（注意，这里的-l是L的小写，-l与/isodevice之间有一个空格。），否则分区界面找不到分区。</p><p> (8)之后重启电脑，就会出现选择系统的界面，双系统安装成功。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>MBR分区与GPT分区互转方法</title>
       <link href="/2019/04/28/MBR%E5%88%86%E5%8C%BA%E4%B8%8EGPT%E5%88%86%E5%8C%BA%E4%BA%92%E8%BD%AC%E6%96%B9%E6%B3%95/"/>
       <url>/2019/04/28/MBR%E5%88%86%E5%8C%BA%E4%B8%8EGPT%E5%88%86%E5%8C%BA%E4%BA%92%E8%BD%AC%E6%96%B9%E6%B3%95/</url>
@@ -20,19 +33,6 @@
       <title>基于uefi引导方式的win10-linux双系统</title>
       <link href="/2019/04/28/%E5%9F%BA%E4%BA%8Euefi%E5%BC%95%E5%AF%BC%E6%96%B9%E5%BC%8F%E7%9A%84win10-linux%E5%8F%8C%E7%B3%BB%E7%BB%9F/"/>
       <url>/2019/04/28/%E5%9F%BA%E4%BA%8Euefi%E5%BC%95%E5%AF%BC%E6%96%B9%E5%BC%8F%E7%9A%84win10-linux%E5%8F%8C%E7%B3%BB%E7%BB%9F/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>基于legacy引导方式的win7-linux双系统</title>
-      <link href="/2019/04/28/%E5%9F%BA%E4%BA%8Elegacy%E5%BC%95%E5%AF%BC%E6%96%B9%E5%BC%8F%E7%9A%84win7-linux%E5%8F%8C%E7%B3%BB%E7%BB%9F/"/>
-      <url>/2019/04/28/%E5%9F%BA%E4%BA%8Elegacy%E5%BC%95%E5%AF%BC%E6%96%B9%E5%BC%8F%E7%9A%84win7-linux%E5%8F%8C%E7%B3%BB%E7%BB%9F/</url>
       
         <content type="html"><![CDATA[]]></content>
       
