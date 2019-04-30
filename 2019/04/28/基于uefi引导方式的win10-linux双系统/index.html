@@ -177,7 +177,26 @@
         </center>
     </div>
     <div class="content-article">
-        
+        <p>本篇文章是装win10-linux双系统最基本的方法，如果你的电脑是uefi引导的win10系统，这个方法可行。但是强调一点，如果是弘基电脑，那么请您绕行，对于弘基电脑来说，这种方法是不可行的。本人装过弘基电脑的双系统，但是装完之后会发现直接进入win10系统，没有linux的引导，还需要在win10系统中用EasyUEFI这个软件来手动添加linux引导项，非常的麻烦，之后还会有许多的bug，需要不定期的进行维护。本人也请教过专业人士，但也没有办法，弘基电脑就是只能这样。下面进入正题，常规方法安装双系统。</p>
+<p><strong><font size="4">操作步骤</font></strong></p>
+<p> (1)准备三个东西：<br>    1)ubuntuIOS镜像文件，网上自行下载(建议到官网下载，靠谱)<br>    2)刻录软件，这里用的是rufus<br>    3)U盘，最好不小于4G</p>
+<p> (2)分区。计算机右键-管理-磁盘管理，选中一个磁盘(这里以D盘为例)右键磁盘压缩，压缩空间自己定，这个空间就是给linux系统，最好不要小于20G。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/ubuntu1-1.png" alt="cmd-markdown-logo"></p>
+<p> (3)刻录系统文件。刻录之前插入你的U盘，格式化。打开rufus软件设备选择你插入的U盘，软件会自动识别，镜像文件就选择你下载好ubuntu镜像文件，其它都是默认，不用改变。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/ubuntu2-1.png" alt="cmd-markdown-logo"></p>
+<p><img src="http://pqk5lbhsc.bkt.clouddn.com/ubuntu2-2.jpg" alt="cmd-markdown-logo"></p>
+<p> 然后点击开始出现以下界面：选择以IOS镜像模式写入，点击OK，就开始刻录，完成之后点击关闭。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/ubuntu2-3.png" alt="cmd-markdown-logo"></p>
+<p> (4)拔出U盘，重启进入bios，设置U盘启动项，关机。</p>
+<p> (5)插入U盘，启动电脑，按指定键进入选择启动项的界面，然后选择插入的U盘，回车之后就会看到ubuntu的引导界面。</p>
+<p> (6)接下来选择第二个选项”Install Ubuntu”，进入安装。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/ubuntu2-4.png" alt="cmd-markdown-logo"></p>
+<p> (7)左边的栏里选择“中文简体”，之后点击安装Ubuntu<br><img src="http://pqk5lbhsc.bkt.clouddn.com/ubuntu2-5.png" alt="cmd-markdown-logo"></p>
+<p> (8)先不联网，直接安装。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/ubuntu2-6.png" alt="cmd-markdown-logo"></p>
+<p> (9)继续安装<br><img src="http://pqk5lbhsc.bkt.clouddn.com/ubuntu2-7.png" alt="cmd-markdown-logo"></p>
+<p> (10)到了最关键的一步了，这个时候系统会提示你是否与windows10共存。如果是新手，我们可以选择与win10共存，这样就避免了分区，非常简便。如果你想自己管理你的分区，那么就选择其他选项进行自定义分区。这里选择与windows10共存。<br> 注意:如果系统没提示你之前安装过windows，那么你的启动方式就错误了，你得回到BIOS页面下更改启动方式再次启动。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/ubuntu2-8.png" alt="cmd-markdown-logo"></p>
+<p> (11)选择上海。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/ubuntu2-9.png" alt="cmd-markdown-logo"></p>
+<p> (12)选择汉语。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/ubuntu2-10.png" alt="cmd-markdown-logo"></p>
+<p> (13)设置账号和密码。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/ubuntu2-11.png" alt="cmd-markdown-logo"></p>
+<p> (14)安装完成后重启系统会看到此界面，这就说明安装成功，ubuntu的引导带着win10的引导一起启动，这时可以选择你想进入的系统。这个界面排在第一位的是”ubuntu”,这样每次开机默认进入的是ubuntu系统，可以把win10系统排在第一位。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/ubuntu2-12.png" alt="cmd-markdown-logo"></p>
+<p> (15)进入ubuntu系统，按Ctrl+Altr+t打开命令行，输入一下命令<br><code>sudo gedit /etc/default/grub</code>,要修改默认启动顺序，找到如下行<br><code>GRUB_DEFAULT=0</code><br> 该行就是启动时默认的选项,修改为自己Windows所在的值。例如我的启动项是(可以在启动界面看到)：<br>  0.Ubuntu启动<br>  1.Ubuntu配置<br>  2.Windows启动<br> 所以修改为<code>GRUB_DEFAULT=2</code>，重启后就可以看到，windows10排在了第一位，每次开机默认进入win10系统。</p>
+
     </div>
 </article>
 
@@ -288,18 +307,6 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/04/28/MBR分区与GPT分区互转方法/">MBR分区与GPT分区互转方法</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/04/21/Arduinono-LCD/">表白神器:Arduino-LCD</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
                     <a href="/2019/04/28/基于python和机器学习的微信跳一跳小程序破解/">基于python和机器学习的微信跳一跳小程序破解</a>
                 </span>
             </li>
@@ -312,13 +319,25 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/04/27/最简单的方法重装win10系统/">最简单的方法重装win10系统</a>
+                    <a href="/2019/04/21/Arduinono-LCD/">表白神器:Arduino-LCD</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
                     <a href="/2019/04/29/基于legacy引导方式的win7-linux双系统/">基于legacy引导方式的win7-linux双系统</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/04/27/最简单的方法重装win10系统/">最简单的方法重装win10系统</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/04/28/MBR分区与GPT分区互转方法/">MBR分区与GPT分区互转方法</a>
                 </span>
             </li>
             
