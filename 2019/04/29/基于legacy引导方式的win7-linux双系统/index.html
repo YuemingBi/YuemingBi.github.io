@@ -185,7 +185,7 @@
 <p> (4)安装之后，点击配置，进行文件配置，然后就会出现一个menu.lst文件，我们要编辑这个文件 因为系统就是这个文件找到我们的Ubuntu的。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/ubuntu1-3.png" alt="cmd-markdown-logo"></p>
 <p><img src="http://pqk5lbhsc.bkt.clouddn.com/ubuntu1-4.png" alt="cmd-markdown-logo"></p>
 <p>把下面的 英文 复制进去，把原来的全覆盖掉<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title Install Ubuntu</span><br><span class="line">root (hd0,0)</span><br><span class="line">kernel (hd0,0)/vmlinuz.efi boot=casper iso-scan/filename=/ubuntu-16.04.2-desktop-amd64.iso ro quiet splash locale=zh_CN.UTF-8</span><br><span class="line">initrd (hd0,0)/initrd.lz</span><br></pre></td></tr></table></figure></p>
-<p>特别注意:<br> 1)上图代码中”ubuntu-16.04.2-desktop-amd64.iso”是你下载ubuntu系统文件名，这个文件名是可以修改的，但修改的名字一定要与写入的代码名字一致，否则将无法安装。<br> 2)在64位中casper目录下为vmlinuz.efi，32位的才是vmlinuz（本人亲测，在安装过程中碰到error 15 file not find 错误，就是因为这个问题）<br> 3)对于有的电脑上你的第一个盘符并不是C盘，在磁盘管理中可以看出，所以安装时需将(hd0,0)改为（hd0,1）(假设为第二个)。</p>
+<p> 特别注意:<br>  1)上图代码中”ubuntu-16.04.2-desktop-amd64.iso”是你下载ubuntu系统文件名，这个文件名是可以修改的，但修改的名字一定要与写入的代码名字一致，否则将无法安装。<br>  2)在64位中casper目录下为vmlinuz.efi，32位的才是vmlinuz（本人亲测，在安装过程中碰到error 15 file not find 错误，就是因为这个问题）<br>  3)对于有的电脑上你的第一个盘符并不是C盘，在磁盘管理中可以看出，所以安装时需将(hd0,0)改为（hd0,1）(假设为第二个)。</p>
 <p> (5)ubuntu-16.04.2-desktop-amd64.iso镜像文件用压缩软件或者虚拟光驱打开，找到casper文件夹，把里面的initrd.lz和vmlinuz.efi解压到C盘，把.disk文件夹也解压到C盘，然后在把ubuntu-16.04.2-desktop-amd64.iso文件也复制到C盘。当然你也可以将这三个文件复制到别的盘符，但一定要与代码中的盘符相对应。比如我想在把文件复制到D盘，则代码中要将(hd0,0)改为相应D盘的盘符(hd0,1)。</p>
 <p> (6)重启，就会看到有2个启动菜单，我们选择NeoGrub引导加载器，过一会就出现ubuntu系统的界面。</p>
 <p> (7)有的电脑是双显卡，重启可能会在出现ubuntu图标时卡住(如果没卡请忽略)，这时因为独立显卡的问题，需要把它禁用掉，重启到win7系统，将EasyBCD配置文件改为如下：<br><img src="http://pqk5lbhsc.bkt.clouddn.com/ubuntu1-5.png" alt="cmd-markdown-logo"><br> 然后再重启，加载引导就可以进入ubuntu界面了。</p>
@@ -259,12 +259,6 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/04/28/MBR分区与GPT分区互转方法/">MBR分区与GPT分区互转方法</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
                     <a href="/2019/04/28/基于uefi引导方式的win10-linux双系统/">基于uefi引导方式的win10-linux双系统</a>
                 </span>
             </li>
@@ -278,6 +272,12 @@
             <li class="list-group-item">
                 <span class="post-title">
                     <a href="/2019/04/27/最简单的方法重装win10系统/">最简单的方法重装win10系统</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/04/26/MBR分区与GPT分区互转方法/">MBR分区与GPT分区互转方法</a>
                 </span>
             </li>
             
@@ -305,6 +305,18 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2019/04/26/MBR分区与GPT分区互转方法/">MBR分区与GPT分区互转方法</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/04/21/Arduinono-LCD/">表白神器:Arduino-LCD</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2019/04/28/基于python和机器学习的微信跳一跳小程序破解/">基于python和机器学习的微信跳一跳小程序破解</a>
                 </span>
             </li>
@@ -317,25 +329,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/04/21/Arduinono-LCD/">表白神器:Arduino-LCD</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/04/29/基于legacy引导方式的win7-linux双系统/">基于legacy引导方式的win7-linux双系统</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
                     <a href="/2019/04/27/最简单的方法重装win10系统/">最简单的方法重装win10系统</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/04/28/MBR分区与GPT分区互转方法/">MBR分区与GPT分区互转方法</a>
+                    <a href="/2019/04/29/基于legacy引导方式的win7-linux双系统/">基于legacy引导方式的win7-linux双系统</a>
                 </span>
             </li>
             

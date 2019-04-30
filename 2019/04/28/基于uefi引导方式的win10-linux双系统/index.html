@@ -195,7 +195,7 @@
 <p> (12)选择汉语。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/ubuntu2-10.png" alt="cmd-markdown-logo"></p>
 <p> (13)设置账号和密码。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/ubuntu2-11.png" alt="cmd-markdown-logo"></p>
 <p> (14)安装完成后重启系统会看到此界面，这就说明安装成功，ubuntu的引导带着win10的引导一起启动，这时可以选择你想进入的系统。这个界面排在第一位的是”ubuntu”,这样每次开机默认进入的是ubuntu系统，可以把win10系统排在第一位。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/ubuntu2-12.png" alt="cmd-markdown-logo"></p>
-<p> (15)进入ubuntu系统，按Ctrl+Altr+t打开命令行，输入一下命令<br><code>sudo gedit /etc/default/grub</code>,要修改默认启动顺序，找到如下行<br><code>GRUB_DEFAULT=0</code><br> 该行就是启动时默认的选项,修改为自己Windows所在的值。例如我的启动项是(可以在启动界面看到)：<br>  0.Ubuntu启动<br>  1.Ubuntu配置<br>  2.Windows启动<br> 所以修改为<code>GRUB_DEFAULT=2</code>，重启后就可以看到，windows10排在了第一位，每次开机默认进入win10系统。</p>
+<p> (15)进入ubuntu系统，按Ctrl+Altr+t打开命令行，输入命令：<br><code>sudo gedit /etc/default/grub</code>,要修改默认启动顺序，找到如下行<br><code>GRUB_DEFAULT=0</code><br> 该行就是启动时默认的选项,修改为自己Windows所在的值。例如我的启动项是(可以在启动界面看到)：<br>  0.Ubuntu启动<br>  1.Ubuntu配置<br>  2.Windows启动<br> 所以修改为<code>GRUB_DEFAULT=2</code>，重启后就可以看到，windows10排在了第一位，每次开机默认进入win10系统。</p>
 
     </div>
 </article>
@@ -261,12 +261,6 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/04/28/MBR分区与GPT分区互转方法/">MBR分区与GPT分区互转方法</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
                     <a href="/2019/04/28/基于uefi引导方式的win10-linux双系统/">基于uefi引导方式的win10-linux双系统</a>
                 </span>
             </li>
@@ -280,6 +274,12 @@
             <li class="list-group-item">
                 <span class="post-title">
                     <a href="/2019/04/27/最简单的方法重装win10系统/">最简单的方法重装win10系统</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/04/26/MBR分区与GPT分区互转方法/">MBR分区与GPT分区互转方法</a>
                 </span>
             </li>
             
@@ -307,6 +307,18 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2019/04/26/MBR分区与GPT分区互转方法/">MBR分区与GPT分区互转方法</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/04/21/Arduinono-LCD/">表白神器:Arduino-LCD</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2019/04/28/基于python和机器学习的微信跳一跳小程序破解/">基于python和机器学习的微信跳一跳小程序破解</a>
                 </span>
             </li>
@@ -319,25 +331,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/04/21/Arduinono-LCD/">表白神器:Arduino-LCD</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/04/29/基于legacy引导方式的win7-linux双系统/">基于legacy引导方式的win7-linux双系统</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
                     <a href="/2019/04/27/最简单的方法重装win10系统/">最简单的方法重装win10系统</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/04/28/MBR分区与GPT分区互转方法/">MBR分区与GPT分区互转方法</a>
+                    <a href="/2019/04/29/基于legacy引导方式的win7-linux双系统/">基于legacy引导方式的win7-linux双系统</a>
                 </span>
             </li>
             
