@@ -10,7 +10,7 @@
     
     
     
-    <title>archive_a | 记录学习点滴</title>
+    <title>turtlebot2-kinetic环境配置 | 记录学习点滴</title>
     <link href="”http://yoursite.com“" rel="”prefetch”">
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -93,7 +93,7 @@
                 
                 
                 
-                <li class="current">
+                <li class>
                     <a href="/archives">
                         <i class="fa fa-archive"></i>归档
                     </a>
@@ -136,19 +136,27 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    <article class="article well article-body" id="article-archive">
+                    
+<article class="article well article-body" id="article">
     <div class="breadcrumb">
         <i class="fa fa-home"></i>
         <a href="http://yoursite.com">记录学习点滴</a>
         >
-        <span>归档</span>
+        <span>turtlebot2-kinetic环境配置</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/archives">归档</a>
+                <a href="/2019/05/16/turtlebot2-kinetic环境配置/">turtlebot2-kinetic环境配置</a>
             </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2019-05-16
+            </span>
+            
         </div>
     </div>
     <!-- 小型设备详细文章 -->
@@ -156,55 +164,46 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/archives">归档</a>
+                    <a href="/2019/05/16/turtlebot2-kinetic环境配置/">turtlebot2-kinetic环境配置</a>
                 </h4>
             </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2019-05-16
+            </p>
+            <p>
+                
+                
+            </p>
         </center>
     </div>
-    <div class="content-article" style="margin-top: 30px;">
-        
-        
-            <h1 style="font-size: 24px; margin-top: 40px;">2019年</h1>
-            
-        <div class="alert alert-info" style="font-size: 14px; line-height: 2; font-weight: bold;">
-            
-             
-             
-                        <a href="/2019/05/16/turtlebot2-kinetic环境配置/">turtlebot2-kinetic环境配置</a>
-                        <br>
-            
-             
-                        <a href="/2019/05/16/turtlebot2-indigo环境配置/">turtlebot2-indigo环境配置</a>
-                        <br>
-            
-             
-                        <a href="/2019/04/29/基于legacy引导方式的win7-linux双系统/">基于legacy引导方式的win7-linux双系统</a>
-                        <br>
-            
-             
-                        <a href="/2019/04/28/基于uefi引导方式的win10-linux双系统/">基于uefi引导方式的win10-linux双系统</a>
-                        <br>
-            
-             
-                        <a href="/2019/04/28/基于python和机器学习的微信跳一跳小程序破解/">基于python和机器学习的微信跳一跳小程序破解</a>
-                        <br>
-            
-             
-                        <a href="/2019/04/27/最简单的方法重装win10系统/">最简单的方法重装win10系统</a>
-                        <br>
-            
-             
-                        <a href="/2019/04/26/MBR分区与GPT分区互转方法/">MBR分区与GPT分区互转方法</a>
-                        <br>
-            
-             
-                        <a href="/2019/04/21/Arduinono-LCD/">表白神器:Arduino-LCD</a>
-                        <br>
-            
-                    </div>
-        
+    <div class="content-article">
+        <font size="3">Turtlebot2-kinetic环境配置</font>
+
+<p>•安装准备<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install python-rosdep python-wstool ros-kinetic-ros</span><br><span class="line">$ sudo apt-get install pyqt5-dev-tools</span><br><span class="line">$ sudo rosdep init</span><br><span class="line">$ rosdep update</span><br></pre></td></tr></table></figure></p>
+<p>•分别建立三个工作空间rocon，kobuki，turtlebot，下载和编译源码<br>•建立rocon目录，下载和编译，rocon都有对应的kinetic版本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir ~/rocon</span><br><span class="line">$ cd ~/rocon</span><br><span class="line">$ wstool init -j4 src https://raw.github.com/robotics-in-concert/rocon/release/kinetic/rocon.rosinstall</span><br><span class="line">（注意：如该下载失败，到github中找到相应文件进行配置）</span><br><span class="line">$ source /opt/ros/kinetic/setup.bash</span><br><span class="line">$ rosdep install --from-paths src -i -y</span><br><span class="line">$ catkin_make</span><br></pre></td></tr></table></figure></p>
+<p>•建立kobuki目录，下载和编译.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir ~/kobuki</span><br><span class="line">$ cd ~/kobuki</span><br><span class="line">$ wstool init -j4 src https://raw.githubusercontent.com/yujinrobot/yujin_tools/kinetic-devel/rosinstalls/kinetic/kobuki.rosinstall</span><br><span class="line">$ source ~/rocon/devel/setup.bash</span><br><span class="line">$ rosdep install --from-paths src -i -y</span><br><span class="line">$ catkin_make</span><br></pre></td></tr></table></figure></p>
+<p>•建立turtlebot目录，下载和编译.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir ~/turtlebot</span><br><span class="line">$ cd ~/turtlebot</span><br><span class="line">$ wstool init -j4 src https://raw.github.com/yujinrobot/yujin_tools/kinetic-devel/rosinstalls/kinetic/turtlebot.rosinstall</span><br><span class="line">$ source ~/kobuki/devel/setup.bash</span><br><span class="line">$ rosdep install --from-paths src -i -y</span><br><span class="line">$ catkin_make</span><br></pre></td></tr></table></figure></p>
+<p>•添加工作空间到bashrc文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;source ~/rocon/devel/setup.bash&quot; &gt;&gt; ~/.bashrc</span><br><span class="line">echo &quot;source ~/kobuki/devel/setup.bash&quot; &gt;&gt; ~/.bashrc</span><br><span class="line">echo &quot;source ~/turtlebot/devel/setup.bash&quot; &gt;&gt; ~/.bashrc</span><br></pre></td></tr></table></figure></p>
+<p>•启用新环境：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ~/.bashrc</span><br></pre></td></tr></table></figure></p>
+<p>•测试环境生效：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">roscd turtlebot</span><br></pre></td></tr></table></figure></p>
+<p>能正常进入到目录就说明成功</p>
+<p>•生成kobuki别名<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rosrun kobuki_ftdi create_udev_rules</span><br></pre></td></tr></table></figure></p>
+<p>•安装kinect驱动<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install ros-kinetic-openni-* ros-kinetic-openni2-* ros-kinetic-freenect-*</span><br></pre></td></tr></table></figure></p>
+<p><font size="3">Turtlebot-kinetic测试</font><br>测试Turtlebot安装（Turtlebot和工作站）</p>
+<p>在工控机中，新开终端输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">roscore</span><br></pre></td></tr></table></figure></p>
+<p>如果ROS安装正确显示<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">started core service [/rosout]</span><br></pre></td></tr></table></figure></p>
+<p>如有问题，请检查安装步骤！<br>检查别名：<br> •输入检测命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls /dev/kobuki</span><br></pre></td></tr></table></figure></p>
+<p> •会显示有对应的设备/dev/kobuki<br> •如果没有，添加别名：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rosrun kobuki_ftdi create_udev_rules</span><br></pre></td></tr></table></figure></p>
+<p> •重插USB线，在进行上述的检测命令</p>
+<p> •通过遥控移动（仅TurtleBot，通过Turtlebot的上网本操作）<br> 1.打开Turtlebot开关，状态点亮。<br> 2.启动Turtlebot，在上网本，打开一个新终端，运行如下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">roslaunch turtlebot_bringup minimal.launch</span><br></pre></td></tr></table></figure></p>
+<p> 3.启动键盘遥控，在上网本，打开另一个新终端，运行如下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">roslaunch turtlebot_teleop keyboard_teleop.launch</span><br></pre></td></tr></table></figure></p>
+<p> 4.点击键盘“i”前进。</p>
+<p>通过发布主题命令<br> •命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rostopic pub -r 10 /cmd_vel_mux/input/navi  geometry_msgs/Twist  &apos;&#123;linear:  &#123;x: 0.1, y: 0.0, z: 0.0&#125;, angular: &#123;x: 0.0,y: 0.0,z: 0.0&#125;&#125;&apos;</span><br></pre></td></tr></table></figure></p>
+
     </div>
 </article>
+
+
                 </div>
                 <aside class="col-md-4 gal-left" id="sidebar">
     <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
@@ -380,17 +379,17 @@
 
                 
                 <li>
-                    <a href="/archives/2019/04/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2019/05/16/turtlebot2-kinetic环境配置/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/archives/2019/04/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2019/05/16/turtlebot2-kinetic环境配置/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/archives/2019/04/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2019/05/16/turtlebot2-kinetic环境配置/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>

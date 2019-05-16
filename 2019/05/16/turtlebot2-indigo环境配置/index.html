@@ -10,7 +10,7 @@
     
     
     
-    <title>archive_a | 记录学习点滴</title>
+    <title>turtlebot2-indigo环境配置 | 记录学习点滴</title>
     <link href="”http://yoursite.com“" rel="”prefetch”">
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -93,7 +93,7 @@
                 
                 
                 
-                <li class="current">
+                <li class>
                     <a href="/archives">
                         <i class="fa fa-archive"></i>归档
                     </a>
@@ -136,19 +136,27 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    <article class="article well article-body" id="article-archive">
+                    
+<article class="article well article-body" id="article">
     <div class="breadcrumb">
         <i class="fa fa-home"></i>
         <a href="http://yoursite.com">记录学习点滴</a>
         >
-        <span>归档</span>
+        <span>turtlebot2-indigo环境配置</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/archives">归档</a>
+                <a href="/2019/05/16/turtlebot2-indigo环境配置/">turtlebot2-indigo环境配置</a>
             </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2019-05-16
+            </span>
+            
         </div>
     </div>
     <!-- 小型设备详细文章 -->
@@ -156,55 +164,36 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/archives">归档</a>
+                    <a href="/2019/05/16/turtlebot2-indigo环境配置/">turtlebot2-indigo环境配置</a>
                 </h4>
             </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2019-05-16
+            </p>
+            <p>
+                
+                
+            </p>
         </center>
     </div>
-    <div class="content-article" style="margin-top: 30px;">
-        
-        
-            <h1 style="font-size: 24px; margin-top: 40px;">2019年</h1>
-            
-        <div class="alert alert-info" style="font-size: 14px; line-height: 2; font-weight: bold;">
-            
-             
-             
-                        <a href="/2019/05/16/turtlebot2-kinetic环境配置/">turtlebot2-kinetic环境配置</a>
-                        <br>
-            
-             
-                        <a href="/2019/05/16/turtlebot2-indigo环境配置/">turtlebot2-indigo环境配置</a>
-                        <br>
-            
-             
-                        <a href="/2019/04/29/基于legacy引导方式的win7-linux双系统/">基于legacy引导方式的win7-linux双系统</a>
-                        <br>
-            
-             
-                        <a href="/2019/04/28/基于uefi引导方式的win10-linux双系统/">基于uefi引导方式的win10-linux双系统</a>
-                        <br>
-            
-             
-                        <a href="/2019/04/28/基于python和机器学习的微信跳一跳小程序破解/">基于python和机器学习的微信跳一跳小程序破解</a>
-                        <br>
-            
-             
-                        <a href="/2019/04/27/最简单的方法重装win10系统/">最简单的方法重装win10系统</a>
-                        <br>
-            
-             
-                        <a href="/2019/04/26/MBR分区与GPT分区互转方法/">MBR分区与GPT分区互转方法</a>
-                        <br>
-            
-             
-                        <a href="/2019/04/21/Arduinono-LCD/">表白神器:Arduino-LCD</a>
-                        <br>
-            
-                    </div>
-        
+    <div class="content-article">
+        <font size="3">Turtlebot2-indigo环境配置</font>
+
+
+<p>安装步骤<br>    有两种安装方法，一种直接的安装命令，另外一种源码编译安装，区别在于：直接安装命令是安装在电脑默认路径/opt/ros/indigo/share里面不便于更改代码，因为默认路径下文件一般有访问权限，无法直接更改，需要使用sudo chmod -R 777 /opt更改其权限，使得每个使用的人都可以更改；源码编译，安装的文件在Home主目录中,方便更改。</p>
+<p>1、直接安装命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install ros-indigo-turtlebot ros-indigo-turtlebot-apps ros-indigo-turtlebot-interactions ros-indigo-turtlebot-simulator ros-indigo-kobuki-ftdi ros-indigo-rocon-remocon ros-indigo-rocon-qt-library ros-indigo-ar-track-alvar-msgs</span><br></pre></td></tr></table></figure></p>
+<p>2、源码方式安装<br> 1)先安装依赖项<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install python-rosdep python-wstool ros-indigo-ros</span><br><span class="line">$ sudo rosdep init</span><br><span class="line">$ rosdep update</span><br></pre></td></tr></table></figure></p>
+<p> 2)建立Turtlebot工作空间</p>
+<p>#创建三个文件夹，分别存放rocon、kobuki、turtlebot，复制相应的代码、设置文件所在路径工作环境、编译<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir ~/rocon</span><br><span class="line">$ cd ~/rocon</span><br><span class="line">$ wstool init -j5 src https://raw.github.com/robotics-in-concert/rocon/release/indigo/rocon.rosinstall</span><br><span class="line">$ source /opt/ros/indigo/setup.bash</span><br><span class="line">$ rosdep install --from-paths src -i -y</span><br><span class="line">$ catkin_make</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir ~/kobuki</span><br><span class="line">$ cd ~/kobuki</span><br><span class="line">$ wstool init src -j5 https://raw.github.com/yujinrobot/yujin_tools/master/rosinstalls/indigo/kobuki.rosinstall</span><br><span class="line">$ source ~/rocon/devel/setup.bash</span><br><span class="line">$ rosdep install --from-paths src -i -y</span><br><span class="line">$ catkin_make</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir ~/turtlebot</span><br><span class="line">$ cd ~/turtlebot</span><br><span class="line">$ wstool init src -j5 https://raw.github.com/yujinrobot/yujin_tools/master/rosinstalls/indigo/turtlebot.rosinstall</span><br><span class="line">$ source ~/kobuki/devel/setup.bash</span><br><span class="line">$ rosdep install --from-paths src -i -y</span><br><span class="line">$ catkin_make</span><br></pre></td></tr></table></figure>
+<p>安装完成后，测试命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ roslaunch turtlebot_bringup minimal.launch</span><br></pre></td></tr></table></figure></p>
+<p>如果正常可以看到以下界面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">... logging to /home/fjx/.ros/log/e9549e36-850f-11e8-ab48-543530c06929/roslaunch-giimbot-19656.log</span><br><span class="line">Checking log directory for disk usage. This may take awhile.</span><br><span class="line">Press Ctrl-C to interrupt</span><br><span class="line">Done checking log file disk usage. Usage is &lt;1GB.</span><br><span class="line">started roslaunch server http://giimbot:36504/</span><br><span class="line">SUMMARY</span><br><span class="line">========</span><br><span class="line">PARAMETERS</span><br><span class="line"> * /app_manager/auto_rapp_installation: False</span><br><span class="line"> * /app_manager/auto_start_rapp:</span><br><span class="line"> ...........(中间省略)</span><br><span class="line">process[interactions-12]: started with pid [19769]</span><br><span class="line">process[zeroconf/zeroconf-13]: started with pid [19781]</span><br><span class="line">[ INFO] [1531316403.920700304]: Zeroconf: service successfully established [turtlebot][_ros-master._tcp][11311]</span><br></pre></td></tr></table></figure></p>
+
     </div>
 </article>
+
+
                 </div>
                 <aside class="col-md-4 gal-left" id="sidebar">
     <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
@@ -380,17 +369,17 @@
 
                 
                 <li>
-                    <a href="/archives/2019/04/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2019/05/16/turtlebot2-indigo环境配置/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/archives/2019/04/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2019/05/16/turtlebot2-indigo环境配置/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/archives/2019/04/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2019/05/16/turtlebot2-indigo环境配置/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
