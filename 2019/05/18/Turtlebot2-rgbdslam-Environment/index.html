@@ -10,7 +10,7 @@
     
     
     
-    <title>基于legacy引导方式的win7-linux双系统 | 记录学习点滴</title>
+    <title>Turtlebot2 rgbdslam_v2环境配置以及三位地图建模 | 记录学习点滴</title>
     <link href="”http://yoursite.com“" rel="”prefetch”">
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -142,19 +142,19 @@
         <i class="fa fa-home"></i>
         <a href="http://yoursite.com">记录学习点滴</a>
         >
-        <span>基于legacy引导方式的win7-linux双系统</span>
+        <span>Turtlebot2 rgbdslam_v2环境配置以及三位地图建模</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2019/04/29/基于legacy引导方式的win7-linux双系统/">基于legacy引导方式的win7-linux双系统</a>
+                <a href="/2019/05/18/Turtlebot2-rgbdslam-Environment/">Turtlebot2 rgbdslam_v2环境配置以及三位地图建模</a>
             </h1>
         </div>
         <div class="tag-article">
             
             <span class="label label-gal">
-                <i class="fa fa-calendar"></i> 2019-04-29
+                <i class="fa fa-calendar"></i> 2019-05-18
             </span>
             
         </div>
@@ -164,11 +164,11 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2019/04/29/基于legacy引导方式的win7-linux双系统/">基于legacy引导方式的win7-linux双系统</a>
+                    <a href="/2019/05/18/Turtlebot2-rgbdslam-Environment/">Turtlebot2 rgbdslam_v2环境配置以及三位地图建模</a>
                 </h4>
             </div>
             <p>
-                <i class="fa fa-calendar"></i> 2019-04-29
+                <i class="fa fa-calendar"></i> 2019-05-18
             </p>
             <p>
                 
@@ -177,23 +177,22 @@
         </center>
     </div>
     <div class="content-article">
-        <p>写到这篇文章，笔者还是很有感触，因为我在大一的时候给电脑装双系统，用的是上一篇文章win10-linux的常规方法，也是用U盘作为启动项，但死活就是安装不上。之后才发现原因，我电脑的win7系统的引导方式是legacy，而常规方法安装的linux系统恰好是uefi引导方式，硬装是装不上的。如果你的电脑也是legacy引导方式想装双系统，其实很简单，这篇文章就可以解决你的问题。</p>
-<p><strong><font size="3">操作步骤</font></strong></p>
-<p> (1)准备两个东西：<br>    1) ubuntu镜像文件，网上自行下载(最好是到官网上去下载，靠谱)，这里以ubuntu16.04为例。<br>    2) EasyBCD软件，网上自行下载(最好是安装版，不要绿色版)。</p>
-<p> (2)分区。计算机右键-管理-磁盘管理，选中一个磁盘(这里以D盘为例)右键磁盘压缩，压缩空间自己定，这个空间就是给linux系统，最好不要小于20G。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/ubuntu1-1.png" alt="cmd-markdown-logo"></p>
-<p> (3)打开EasyBCD软件，添加linux引导项。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/ubuntu1-2.png" alt="cmd-markdown-logo"></p>
-<p> (4)安装之后，点击配置，进行文件配置，然后就会出现一个menu.lst文件，我们要编辑这个文件 因为系统就是这个文件找到我们的Ubuntu的。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/ubuntu1-3.png" alt="cmd-markdown-logo"></p>
-<p><img src="http://pqk5lbhsc.bkt.clouddn.com/ubuntu1-4.png" alt="cmd-markdown-logo"></p>
-<p>把下面的 英文 复制进去，把原来的全覆盖掉<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title Install Ubuntu</span><br><span class="line">root (hd0,0)</span><br><span class="line">kernel (hd0,0)/vmlinuz.efi boot=casper iso-scan/filename=/ubuntu-16.04.2-desktop-amd64.iso ro quiet splash locale=zh_CN.UTF-8</span><br><span class="line">initrd (hd0,0)/initrd.lz</span><br></pre></td></tr></table></figure></p>
-<p> 特别注意:<br>  1)上图代码中”ubuntu-16.04.2-desktop-amd64.iso”是你下载ubuntu系统文件名，这个文件名是可以修改的，但修改的名字一定要与写入的代码名字一致，否则将无法安装。<br>  2)在64位中casper目录下为vmlinuz.efi，32位的才是vmlinuz（本人亲测，在安装过程中碰到error 15 file not find 错误，就是因为这个问题）<br>  3)对于有的电脑上你的第一个盘符并不是C盘，在磁盘管理中可以看出，所以安装时需将(hd0,0)改为（hd0,1）(假设为第二个)。</p>
-<p> (5)ubuntu-16.04.2-desktop-amd64.iso镜像文件用压缩软件或者虚拟光驱打开，找到casper文件夹，把里面的initrd.lz和vmlinuz.efi解压到C盘，把.disk文件夹也解压到C盘，然后在把ubuntu-16.04.2-desktop-amd64.iso文件也复制到C盘。当然你也可以将这三个文件复制到别的盘符，但一定要与代码中的盘符相对应。比如我想在把文件复制到D盘，则代码中要将(hd0,0)改为相应D盘的盘符(hd0,1)。</p>
-<p> (6)重启，就会看到有2个启动菜单，我们选择NeoGrub引导加载器，过一会就出现ubuntu系统的界面。</p>
-<p> (7)有的电脑是双显卡，重启可能会在出现ubuntu图标时卡住(如果没卡请忽略)，这时因为独立显卡的问题，需要把它禁用掉，重启到win7系统，将EasyBCD配置文件改为如下：<br><img src="http://pqk5lbhsc.bkt.clouddn.com/ubuntu1-5.png" alt="cmd-markdown-logo"><br> 然后再重启，加载引导就可以进入ubuntu界面了。</p>
-<p> (8)这个步骤非常重要，出现界面之后，不要着急点安装，按Ctrl+Alt+t打开终端，输入代码:sudo umount -l /isodevice这一命令取消掉对光盘所在驱动器的挂载(注意，这里的-l是-L的小写，-l与/isodevice之间有一个空格)，否则分区界面找不到分区。</p>
-<p> (9)然后点击ubuntu桌面的”install ubuntu”进入安装，在进行到“安装类型”的时候，我们可以选择“安装ubuntu，与Windows7共存”，这样就可以不用自己分区，非常简便，我们也可以选择“其它选项”，这样就需要自己来分区(此处不详细讲解)，其他的安装步骤正常安装即可。安装完成后，如果刚才(7)界面卡住，先不要重启，因为新系统没有配置Grub文件，重启还会卡住。此时要按Ctrl+Alt+T打开终端，输入sudo gedit /boot/grub.cfg 在出现的文档中搜索splash，并在其后加一个空格然后输入nomodeset并保存文档，就OK了。</p>
-<p> (10)重启，就可以看见粉色的引导界面，有“ubunut”和“windows7”(win7在最下面)，这就是ubuntu引导带着win7一起启动，至此双系统安装成功。</p>
-<p> (11)进入ubuntu系统后，按Ctrl+Alt+t打开终端，输入”sudo mv /et/grub.d/30_os-prober /etc/grub.d/06_os-prober”然后输入密码回车，再输入”sudo update-grub”,输入密码回车，此时，win7系统引导就在最上面了，每次开机就默认进入win7系统。</p>
-<p> (12)重启进入win7，打开EasyBCD，移除nerogrub引导项(此步骤不做也可，没有什么影响)。</p>
+        <font size="3">Turtlebot2 rgbdslam_v2环境配置以及三位地图建模</font>
+
+<p>1、创建一个工作空间，编译一遍<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir -p ~/catkin_ws/src</span><br><span class="line">$ cd ~/catkin_ws</span><br><span class="line">$ catkin_make</span><br></pre></td></tr></table></figure></p>
+<p>2、下载rgbdslam_v2代码包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ cd ~/catkin_ws/src</span><br><span class="line">$ wget -q http://github.com/felixendres/rgbdslam_v2/archive/kinetic.zip</span><br><span class="line">$ unzip kinetic.zip</span><br><span class="line">(把解压出来的文件名更改为rgbdslam_v2)</span><br><span class="line">$ sudo cp -a ~/catkin_ws/src/rgbdslam_v2 /opt/ros/kinetic/share</span><br></pre></td></tr></table></figure></p>
+<p>3、安装g2o的依赖<br>sudo apt-get install libsuitesparse-dev<br>4、创建eigen工作空间<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir ~/src</span><br><span class="line">$ cd ~/src</span><br><span class="line">$ wget http://bitbucket.org/eigen/eigen/get/3.2.10.tar.bz2</span><br><span class="line">mkdir eigen</span><br><span class="line">$ tar -xvjf 3.2.10.tar.bz2 -C eigen --strip-components 1</span><br></pre></td></tr></table></figure></p>
+<p>5、创建g2o工作空间<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ cd ~/src</span><br><span class="line">$ git clone https://github.com/felixendres/g2o.git</span><br><span class="line">$ cd ~/src/g2o</span><br><span class="line">$ mkdir ~/src/g2o/build</span><br><span class="line">$ cd ~/src/g2o/build</span><br></pre></td></tr></table></figure></p>
+<p>6、配置g2o代码包中的CMakeLists.txt文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ vi ~/src/g2o/CMakeLists.txt</span><br><span class="line">(如果不习惯vi 可以执行 sudo gedit ~/src/g2o/CMakeLists.txt</span><br><span class="line"> 也可以使用atom文本编辑器打开)</span><br><span class="line">在251行中：</span><br><span class="line">将SET(G2O_EIGEN3_INCLUDE $&#123;EIGEN3_INCLUDE_DIR&#125; CACHE PATH &quot;Directory of Eigen3&quot;)</span><br><span class="line">替换为SET(G2O_EIGEN3_INCLUDE &quot;~/src/eigen&quot; CACHE PATH &quot;Directory of Eigen3&quot;)</span><br><span class="line">保存退出</span><br></pre></td></tr></table></figure></p>
+<p>7、编译g2o工作空间<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ cd ~/src/g2o/build</span><br><span class="line">$ cmake ../</span><br><span class="line">$ make</span><br><span class="line">$ sudo make install</span><br></pre></td></tr></table></figure></p>
+<p>8、下载PCL1.8(点云库：Point Cloud Library)<br>在此过程中，采用了很多方法，但都失败了，最后直接找到源代码的位置，下载zip文件(tar文件无法下载),下载之后放在~/src目录下解压。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd ~/src</span><br><span class="line">$ unzip pcl-pcl-1.8.0.zip</span><br></pre></td></tr></table></figure></p>
+<p>9、配置PCL,使其支持C++2011<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ cd ~/src/pcl-pcl-1.8.0</span><br><span class="line">$ vi CMakeLists.txt(或者sudo gedit CMakeLists.txt)</span><br><span class="line">在146行(endif()下一行)中加入SET(CMAKE_CXX_FLAGS &quot;$&#123;CMAKE_CXX_FLAGS&#125; -std=c++11&quot;)</span><br></pre></td></tr></table></figure></p>
+<p>10、编译PCL<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ cd ~/src/pcl-pcl-1.8.0</span><br><span class="line">$ mkdir build</span><br><span class="line">$ cd build</span><br><span class="line">$ cmake ../</span><br><span class="line">$ make VERBOSE=1 (此步骤是为了验证PCL是否支持C++2011，如果能在输出中看到&quot;-std=c++11&quot;，则说明是支持的，没有问题,按Ctrl+C退出，执行下一行命令。)</span><br><span class="line">$ make</span><br><span class="line">$ sudo make install</span><br></pre></td></tr></table></figure></p>
+<p>11、配置rgbdslam_v2<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ cd ~/catkin_ws/src/rgbdslam_v2</span><br><span class="line">$ vi CMakeLists.txt(sudo gedit CMakeLists.txt)</span><br><span class="line">在第六行中加入:add_compile_options(-std=c++11)</span><br><span class="line">之后将find_package(PCL 1.7 REQUIRED COMPONENTS common io)</span><br><span class="line">替换为:</span><br><span class="line">find_package(PCL 1.8 REQUIRED COMPONENTS common io)</span><br></pre></td></tr></table></figure></p>
+<p>12、编译rgbdslam_v2<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ cd ~/catkin_ws</span><br><span class="line">$ source devel/setup.bash</span><br><span class="line">$ cd ~/catkin_ws/src/rgbdslam_v2</span><br><span class="line">$ catkin_make</span><br><span class="line">$ source devel/setup.bash</span><br><span class="line">$ echo &quot;source ~/catkin_ws/devel/setup.bash&quot; &gt;&gt; ~/.bashrc</span><br></pre></td></tr></table></figure></p>
+<p>13、环境测试<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ roslaunch freenect_launch freenect.launch</span><br><span class="line">(或者输入:roslaunch openni_launch openni.launch,如果没有设备连接，会显示&quot;waiting for devices to be connected&quot;)</span><br><span class="line">$ roslaunch rgbdslam openni+rgbdslam.launch(运行此命令就可以看到一个UI的界面了)</span><br></pre></td></tr></table></figure></p>
+<p>14、查看地图<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rosrun pcl_ros pcd_to_pointcloud quicksave.pcd</span><br></pre></td></tr></table></figure></p>
+<p>有关博客参考：<br><code>https://hubpages.com/technology/Instructions-for-compiling-rgbdslam-v2-on-a-fresh-Ubuntu-1604-install-ros-kinetic-in-virtualbox</code><br><code>https://blog.csdn.net/u011178262/article/details/83046256</code><br><code>https://blog.csdn.net/yangtze_1006/article/details/51606680</code><br><code>www.guyuehome.com/860</code><br><code>https://www.cnblogs.com/gaoxiang12/p/4462518.html</code><br><code>https://github.com/felixendres/rgbdslam_v2</code><br><code>https://www.ncnynl.com/archives/201708/1931.html</code></p>
 
     </div>
 </article>
@@ -204,7 +203,7 @@
 <script>
 	if(!window.commentConfig) {
       window.commentConfig = {}
-      window.commentConfig.title = '基于legacy引导方式的win7-linux双系统'
+      window.commentConfig.title = 'Turtlebot2 rgbdslam_v2环境配置以及三位地图建模'
     }
 </script>
 
@@ -407,17 +406,17 @@
 
                 
                 <li>
-                    <a href="/2019/04/29/基于legacy引导方式的win7-linux双系统/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2019/05/18/Turtlebot2-rgbdslam-Environment/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2019/04/29/基于legacy引导方式的win7-linux双系统/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2019/05/18/Turtlebot2-rgbdslam-Environment/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2019/04/29/基于legacy引导方式的win7-linux双系统/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2019/05/18/Turtlebot2-rgbdslam-Environment/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
@@ -535,7 +534,7 @@
 <script src="https://myau.moe/js/comment/gitment.browser.js"></script>
 <script>
     if(window.commentConfig) {
-      window.commentConfig.id = 'Mon Apr 29 2019 21:34:57 GMT+0800'
+      window.commentConfig.id = 'Sat May 18 2019 07:31:00 GMT+0800'
       window.commentConfig.owner = 'https://github.com/YuemingBi'
       window.commentConfig.repo = 'comment-repo'
       window.commentConfig.client_id = '211f4f274d85581b6bc4'
@@ -543,7 +542,7 @@
       window.commentConfig.redirect_uri = ''
     } else {
       window.commentConfig = {
-      	id: 'Mon Apr 29 2019 21:34:57 GMT+0800',
+      	id: 'Sat May 18 2019 07:31:00 GMT+0800',
         owner: 'https://github.com/YuemingBi',
         repo: 'comment-repo',
         client_id: '211f4f274d85581b6bc4',

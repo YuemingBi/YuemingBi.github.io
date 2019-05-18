@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2019/05/18/PCL-Learning-Notes/</loc>
+    
+    <lastmod>2019-05-18T05:02:06.284Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/05/18/Turtlebot2-rgbdslam-Environment/</loc>
+    
+    <lastmod>2019-05-18T02:09:59.368Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/05/18/Turtlebot2-rgbslam-3D-Mapping/</loc>
+    
+    <lastmod>2019-05-18T02:08:49.904Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2019/05/16/Turtlebot2-Kinetic-Environment/</loc>
     
     <lastmod>2019-05-16T11:50:40.463Z</lastmod>

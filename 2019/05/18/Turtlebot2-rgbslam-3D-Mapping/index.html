@@ -10,7 +10,7 @@
     
     
     
-    <title>基于legacy引导方式的win7-linux双系统 | 记录学习点滴</title>
+    <title>Turtlebot2 rgbslam_v2 三维地图建模 | 记录学习点滴</title>
     <link href="”http://yoursite.com“" rel="”prefetch”">
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -142,19 +142,19 @@
         <i class="fa fa-home"></i>
         <a href="http://yoursite.com">记录学习点滴</a>
         >
-        <span>基于legacy引导方式的win7-linux双系统</span>
+        <span>Turtlebot2 rgbslam_v2 三维地图建模</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2019/04/29/基于legacy引导方式的win7-linux双系统/">基于legacy引导方式的win7-linux双系统</a>
+                <a href="/2019/05/18/Turtlebot2-rgbslam-3D-Mapping/">Turtlebot2 rgbslam_v2 三维地图建模</a>
             </h1>
         </div>
         <div class="tag-article">
             
             <span class="label label-gal">
-                <i class="fa fa-calendar"></i> 2019-04-29
+                <i class="fa fa-calendar"></i> 2019-05-18
             </span>
             
         </div>
@@ -164,11 +164,11 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2019/04/29/基于legacy引导方式的win7-linux双系统/">基于legacy引导方式的win7-linux双系统</a>
+                    <a href="/2019/05/18/Turtlebot2-rgbslam-3D-Mapping/">Turtlebot2 rgbslam_v2 三维地图建模</a>
                 </h4>
             </div>
             <p>
-                <i class="fa fa-calendar"></i> 2019-04-29
+                <i class="fa fa-calendar"></i> 2019-05-18
             </p>
             <p>
                 
@@ -177,23 +177,11 @@
         </center>
     </div>
     <div class="content-article">
-        <p>写到这篇文章，笔者还是很有感触，因为我在大一的时候给电脑装双系统，用的是上一篇文章win10-linux的常规方法，也是用U盘作为启动项，但死活就是安装不上。之后才发现原因，我电脑的win7系统的引导方式是legacy，而常规方法安装的linux系统恰好是uefi引导方式，硬装是装不上的。如果你的电脑也是legacy引导方式想装双系统，其实很简单，这篇文章就可以解决你的问题。</p>
-<p><strong><font size="3">操作步骤</font></strong></p>
-<p> (1)准备两个东西：<br>    1) ubuntu镜像文件，网上自行下载(最好是到官网上去下载，靠谱)，这里以ubuntu16.04为例。<br>    2) EasyBCD软件，网上自行下载(最好是安装版，不要绿色版)。</p>
-<p> (2)分区。计算机右键-管理-磁盘管理，选中一个磁盘(这里以D盘为例)右键磁盘压缩，压缩空间自己定，这个空间就是给linux系统，最好不要小于20G。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/ubuntu1-1.png" alt="cmd-markdown-logo"></p>
-<p> (3)打开EasyBCD软件，添加linux引导项。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/ubuntu1-2.png" alt="cmd-markdown-logo"></p>
-<p> (4)安装之后，点击配置，进行文件配置，然后就会出现一个menu.lst文件，我们要编辑这个文件 因为系统就是这个文件找到我们的Ubuntu的。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/ubuntu1-3.png" alt="cmd-markdown-logo"></p>
-<p><img src="http://pqk5lbhsc.bkt.clouddn.com/ubuntu1-4.png" alt="cmd-markdown-logo"></p>
-<p>把下面的 英文 复制进去，把原来的全覆盖掉<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title Install Ubuntu</span><br><span class="line">root (hd0,0)</span><br><span class="line">kernel (hd0,0)/vmlinuz.efi boot=casper iso-scan/filename=/ubuntu-16.04.2-desktop-amd64.iso ro quiet splash locale=zh_CN.UTF-8</span><br><span class="line">initrd (hd0,0)/initrd.lz</span><br></pre></td></tr></table></figure></p>
-<p> 特别注意:<br>  1)上图代码中”ubuntu-16.04.2-desktop-amd64.iso”是你下载ubuntu系统文件名，这个文件名是可以修改的，但修改的名字一定要与写入的代码名字一致，否则将无法安装。<br>  2)在64位中casper目录下为vmlinuz.efi，32位的才是vmlinuz（本人亲测，在安装过程中碰到error 15 file not find 错误，就是因为这个问题）<br>  3)对于有的电脑上你的第一个盘符并不是C盘，在磁盘管理中可以看出，所以安装时需将(hd0,0)改为（hd0,1）(假设为第二个)。</p>
-<p> (5)ubuntu-16.04.2-desktop-amd64.iso镜像文件用压缩软件或者虚拟光驱打开，找到casper文件夹，把里面的initrd.lz和vmlinuz.efi解压到C盘，把.disk文件夹也解压到C盘，然后在把ubuntu-16.04.2-desktop-amd64.iso文件也复制到C盘。当然你也可以将这三个文件复制到别的盘符，但一定要与代码中的盘符相对应。比如我想在把文件复制到D盘，则代码中要将(hd0,0)改为相应D盘的盘符(hd0,1)。</p>
-<p> (6)重启，就会看到有2个启动菜单，我们选择NeoGrub引导加载器，过一会就出现ubuntu系统的界面。</p>
-<p> (7)有的电脑是双显卡，重启可能会在出现ubuntu图标时卡住(如果没卡请忽略)，这时因为独立显卡的问题，需要把它禁用掉，重启到win7系统，将EasyBCD配置文件改为如下：<br><img src="http://pqk5lbhsc.bkt.clouddn.com/ubuntu1-5.png" alt="cmd-markdown-logo"><br> 然后再重启，加载引导就可以进入ubuntu界面了。</p>
-<p> (8)这个步骤非常重要，出现界面之后，不要着急点安装，按Ctrl+Alt+t打开终端，输入代码:sudo umount -l /isodevice这一命令取消掉对光盘所在驱动器的挂载(注意，这里的-l是-L的小写，-l与/isodevice之间有一个空格)，否则分区界面找不到分区。</p>
-<p> (9)然后点击ubuntu桌面的”install ubuntu”进入安装，在进行到“安装类型”的时候，我们可以选择“安装ubuntu，与Windows7共存”，这样就可以不用自己分区，非常简便，我们也可以选择“其它选项”，这样就需要自己来分区(此处不详细讲解)，其他的安装步骤正常安装即可。安装完成后，如果刚才(7)界面卡住，先不要重启，因为新系统没有配置Grub文件，重启还会卡住。此时要按Ctrl+Alt+T打开终端，输入sudo gedit /boot/grub.cfg 在出现的文档中搜索splash，并在其后加一个空格然后输入nomodeset并保存文档，就OK了。</p>
-<p> (10)重启，就可以看见粉色的引导界面，有“ubunut”和“windows7”(win7在最下面)，这就是ubuntu引导带着win7一起启动，至此双系统安装成功。</p>
-<p> (11)进入ubuntu系统后，按Ctrl+Alt+t打开终端，输入”sudo mv /et/grub.d/30_os-prober /etc/grub.d/06_os-prober”然后输入密码回车，再输入”sudo update-grub”,输入密码回车，此时，win7系统引导就在最上面了，每次开机就默认进入win7系统。</p>
-<p> (12)重启进入win7，打开EasyBCD，移除nerogrub引导项(此步骤不做也可，没有什么影响)。</p>
+        <p><font size="3">Turtlebot2 rgbslam_v2 三维地图建模</font><br>此篇文章转载博客:<code>www.guyuehome.com/860</code><br>1、启动UI<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">roslaunch freenect_launch freenect.launch</span><br><span class="line">roslaunch rgbdslam rgbdslam.launch</span><br></pre></td></tr></table></figure></p>
+<p>或者：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ roslaunch rgbdslam openni+rgbdslam.launch(启动界面)</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://pqk5lbhsc.bkt.clouddn.com/3D-mapping-1.png" alt="cmd-markdown-logo"><br>2、启动底座和遥控<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ roslaunch turtlebot_bringup minimal.launch(启动底座)</span><br><span class="line">$ roslaunch turtlebot_teleop keyboard_teleop.launch(启动遥控)</span><br></pre></td></tr></table></figure></p>
+<p>3、建立地图<br>按下rgbd-slam-v2的空白键，让机器人四处走起来。UI的状态栏会显示程序的运行状态，有提取特征、加入新Frame，等等。如果它成功匹配上，上图的点云就会更新，并且会跟着机器人转动。<br><img src="http://pqk5lbhsc.bkt.clouddn.com/3D-mapping-2.png" alt="cmd-markdown-logo"><br>别看上面像是打了码一样的，最后出的点云图可是高清无码的。<br>4、保存地图<br>建模完成后，直接在菜单栏中选择保存成点云数据即可。<br>5、查看地图<br>然可以通过pcl_ros（<a href="http://wiki.ros.org/pcl_ros" target="_blank" rel="noopener">http://wiki.ros.org/pcl_ros</a> ）来查看保存的点云地图：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rosrun pcl_ros pcd_to_pointcloud quicksave.pcd</span><br></pre></td></tr></table></figure></p>
+<p>在rviz中显示pointcloud2数据：<br><img src="http://pqk5lbhsc.bkt.clouddn.com/3D-mapping-3.jpg" alt="cmd-markdown-logo"><br>6、总结<br>Rgbd-slam-v2是14年论文里提到的算法。它整合了SLAM领域里的各种技术：图像特征、回环检测、点云、图优化等等，是一个非常全面且优秀的程序。它的UI做的也很漂亮，可以在它的源代码上继续开发。<br>缺点：在美观之外，由于要提特征（SIFT很费时）、渲染点云，这些事情是很吃资源的，导致算法实时性不太好。有时会发现它卡在那儿不动了，不得不等它一小会。机器人如果走的太快，很容易跟丢。</p>
 
     </div>
 </article>
@@ -204,7 +192,7 @@
 <script>
 	if(!window.commentConfig) {
       window.commentConfig = {}
-      window.commentConfig.title = '基于legacy引导方式的win7-linux双系统'
+      window.commentConfig.title = 'Turtlebot2 rgbslam_v2 三维地图建模'
     }
 </script>
 
@@ -338,12 +326,6 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/05/16/Turtlebot2-Kinetic-Environment/">turtlebot2-kinetic环境配置</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
                     <a href="/2019/04/26/MBR分区与GPT分区互转方法/">MBR分区与GPT分区互转方法</a>
                 </span>
             </li>
@@ -396,6 +378,12 @@
                 </span>
             </li>
             
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/05/18/PCL-Learning-Notes/">PCL-Learning-Notes</a>
+                </span>
+            </li>
+            
         </ul>
     </div>
 </aside>
@@ -407,17 +395,17 @@
 
                 
                 <li>
-                    <a href="/2019/04/29/基于legacy引导方式的win7-linux双系统/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2019/05/18/Turtlebot2-rgbslam-3D-Mapping/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2019/04/29/基于legacy引导方式的win7-linux双系统/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2019/05/18/Turtlebot2-rgbslam-3D-Mapping/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2019/04/29/基于legacy引导方式的win7-linux双系统/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2019/05/18/Turtlebot2-rgbslam-3D-Mapping/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
@@ -535,7 +523,7 @@
 <script src="https://myau.moe/js/comment/gitment.browser.js"></script>
 <script>
     if(window.commentConfig) {
-      window.commentConfig.id = 'Mon Apr 29 2019 21:34:57 GMT+0800'
+      window.commentConfig.id = 'Sat May 18 2019 09:36:29 GMT+0800'
       window.commentConfig.owner = 'https://github.com/YuemingBi'
       window.commentConfig.repo = 'comment-repo'
       window.commentConfig.client_id = '211f4f274d85581b6bc4'
@@ -543,7 +531,7 @@
       window.commentConfig.redirect_uri = ''
     } else {
       window.commentConfig = {
-      	id: 'Mon Apr 29 2019 21:34:57 GMT+0800',
+      	id: 'Sat May 18 2019 09:36:29 GMT+0800',
         owner: 'https://github.com/YuemingBi',
         repo: 'comment-repo',
         client_id: '211f4f274d85581b6bc4',
