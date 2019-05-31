@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2019/04/28/%E5%9F%BA%E4%BA%8Epython%E5%92%8C%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%BE%AE%E4%BF%A1%E8%B7%B3%E4%B8%80%E8%B7%B3%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%A0%B4%E8%A7%A3/</loc>
+    
+    <lastmod>2019-05-31T16:21:03.305Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2019/05/21/Machine-Learning-Vectorization/</loc>
     
-    <lastmod>2019-05-31T16:06:31.593Z</lastmod>
+    <lastmod>2019-05-31T16:17:38.118Z</lastmod>
     
   </url>
   
@@ -51,13 +58,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2019/04/28/%E5%9F%BA%E4%BA%8Epython%E5%92%8C%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%BE%AE%E4%BF%A1%E8%B7%B3%E4%B8%80%E8%B7%B3%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%A0%B4%E8%A7%A3/</loc>
-    
-    <lastmod>2019-05-31T11:23:55.237Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2019/05/18/Turtlebot2-rgbdslam-Environment/</loc>
     
     <lastmod>2019-05-18T05:20:06.091Z</lastmod>
@@ -75,13 +75,6 @@
     <loc>http://yoursite.com/2019/05/16/turtlebot2-Indigo-Environment/</loc>
     
     <lastmod>2019-05-16T11:50:38.361Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2019/04/21/Arduinono-LCD/</loc>
-    
-    <lastmod>2019-05-16T11:06:28.247Z</lastmod>
     
   </url>
   
