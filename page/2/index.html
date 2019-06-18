@@ -1,9 +1,178 @@
-<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>记录学习点滴</title><link rel="stylesheet" type="text/css" href="/css/normalize.css"><link rel="stylesheet" type="text/css" href="/css/highlight.css"><link rel="stylesheet" type="text/css" href="/css/very-simple.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><!-- include the sidebar--><!-- include ./includes/sidebar.jade--><!-- Blog title and subtitle--><header><div class="container header"><a id="logo" href="/." class="title">记录学习点滴</a><span class="subtitle"></span><label id="toggle-menu" for="menu" onclick><i class="fa fa-bars"></i></label></div></header><!-- use checkbox hack for toggle nav-bar on small screens--><input id="menu" type="checkbox"><!-- Navigation Links--><nav id="nav"><div class="container"><a href="/" class="sidebar-nav-item active">Home</a><a href="/archives" class="sidebar-nav-item">Archives</a></div></nav><div id="header-margin-bar"></div><article><div id="index-main" class="container entries"><div class="post-entry"><div class="post-time">2019-04-27</div><div class="post-desc"><div class="post-title"><a href="/2019/04/27/最简单的方法重装win10系统/">最简单的方法重装win10系统</a></div><div class="post-content"><p><font size="3">到Microsoft官网下载安装工具,用这个工具安装win10系统非常方便。利用此工具不仅可以在原有系统重装win10，也可以用来做U盘启动项。</font><br><code>https://www.microsoft.com/zh-cn/software-download/windows10</code></p></div><div class="post-meta"></div></div></div><div class="post-entry"><div class="post-time">2019-04-26</div><div class="post-desc"><div class="post-title"><a href="/2019/04/26/MBR分区与GPT分区互转方法/">MBR分区与GPT分区互转方法</a></div><div class="post-content"><font size="3">系统引导的两种方式：</font><br>UEFI启动模式：（GPT分区表格式+ UEFI启动模式+ x64的系统）<br>Legacy启动模式：（MBR主引导记录分区格式+ Legacy启动模式）<br><br>UEFI是新式的BIOS，Legacy是传统BIOS。在UEFI 模式下安装的系统，只能用UEFI模式引导；同理，如果在Legacy模式下安装的系统，也只能在Legacy模式下进系统。<br><br>UEFI可以引导win7和win10系统，但是磁盘分区必须是GPT模式，系统必须是64位，UEFI不支持32位系统。legacy也可以引导win7和win10系统，磁盘分区必须是MBR模式，系统可以是32位也可以是64位。<br><br>如果安装win10系统，推荐UEFI+GPT。因为win10系统默认就是uefi+gpt模式，这样才能发挥最佳性能。<br>如果安装win7系统，推荐legacy+MBR。<br>这两种搭配最常见的搭配，安装的系统不容易出现问题，其他的搭配个人觉得没有什么必要。当然，还是要根据自己的电脑情况来决定。比如一些老旧机型不支持uefi，只能是legacy引导。<br><br><font size="3">磁盘的两种分区格式：</font><br><strong>MBR</strong>，即主引导记录<br><strong>GPT</strong>，GUID的缩写<br>GPT分区与MBR分区方法相比，GPT具有更多的优点。MBR分区表的硬盘最多能划分4个主分区磁盘，并且MBR最大仅支持2TB的硬盘，GPT分区表类型不受分区个数、硬盘大小的限制。<br><br>通常情况下，如果win10系统想重装win7，需要把GPT转换为MBR，如果win7系统想重装win10，需要把MBR装换为GPT。<br><br><font color="#DC143C" size="3">注意：转换分区格式过程中均会清除磁盘中的所有分区和数据，所以在操作前请注意备份硬盘中的文件。</font>
+
+<!DOCTYPE html>
+<html lang="zh-Hans" class="loading">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Dengwanxia</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="Fechin,"> 
+    
+    <meta name="author" content="WanxiaDenng"> 
+    <link rel="alternative" href="atom.xml" title="Dengwanxia" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+</head>
+</html>
+<body class="loading">
+    <span id="config-title" style="display:none">Dengwanxia</span>
+    <div id="loader"></div>
+    <div class="nav">
+    <ul id="menu-menu" class="menu">
+        
+        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
+            <a href="/whoami/" title="Whoami" target="_blank" rel="noopener">Whoami</a>
+        </li>
+        
+        <li class="  menu-item menu-item-type-post_type menu-item-object-page">
+            <a href="https://github.com/Fechin" title="Github" target="_blank" rel="noopener">Github</a>
+        </li>
+        
+        <li class="  menu-item menu-item-type-post_type menu-item-object-page">
+            <a href="https://twitter.com/FechinLi" title="Twitter" target="_blank" rel="noopener">Twitter</a>
+        </li>
+        
+    </ul>
+    <p id="copyright">
+        &copy; 2019 WanxiaDenng.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme <a href="https://github.com/Fechin/hexo-theme-diaspora" title="Diaspora" target="_blank" rel="noopener">Diaspora</a>
+        by Fechin
+    </p>
+</div>
+
+<div id="container">
+    
+<div id="screen">
+    <div id="mark">
+        <div class="layer" data-depth="0.4">
+            <img src="/img/welcome-cover.jpg" id="cover" crossorigin="anonymous" width="1920" height="1080">
+        </div>
+    </div>
+    <div id="vibrant">
+        <svg viewbox="0 0 2880 1620" height="100%" preserveaspectratio="xMaxYMax slice">
+            <polygon opacity="0.7" points="2000,1620 0,1620 0,0 600,0 "/>
+        </svg>
+        <div></div>
+    </div>
+    <div id="header">
+        <div>
+            <a class="image-logo" href="/"></a>
+            <div class="icon-menu switchmenu"></div>
+        </div>
+    </div>
+    
+    <div id="post0">
+        <p>四月 27, 2019</p>
+        <h2><a href="/2019/04/27/最简单的方法重装win10系统/" title="最简单的方法重装win10系统" class="posttitle">最简单的方法重装win10系统</a></h2>
+        <p class="summary">到Microsoft官网下载安装工具,用这个工具安装win10系统非常方便。利用此工具不仅可以在原有系统重装win...</p>
+    </div>
+    
+</div>
+
+    <div id="primary">
+        
+<div class="post">
+    <a href="/2019/04/27/最简单的方法重装win10系统/" title="最简单的方法重装win10系统">
+        <img src="/img/cover.jpg" class="cover" width="680" height="440">
+    </a>
+    <div class="else">
+        <p>四月 27, 2019</p>
+        <h3><a href="/2019/04/27/最简单的方法重装win10系统/" title="最简单的方法重装win10系统" class="posttitle">最简单的方法重装win10系统</a></h3>
+        <p>到Microsoft官网下载安装工具,用这个工具安装win10系统非常方便。利用此工具不仅可以在原有系统重装win10，也可以用来做U盘启动项。https...</p>
+    </div>
+</div>
+
+
+<div class="post">
+    <a href="/2019/04/26/MBR分区与GPT分区互转方法/" title="MBR分区与GPT分区互转方法">
+        <img src="/img/cover.jpg" class="cover" width="680" height="440">
+    </a>
+    <div class="else">
+        <p>四月 26, 2019</p>
+        <h3><a href="/2019/04/26/MBR分区与GPT分区互转方法/" title="MBR分区与GPT分区互转方法" class="posttitle">MBR分区与GPT分区互转方法</a></h3>
+        <p>系统引导的两种方式：UEFI启动模式：（GPT分区表格式+ UEFI启动模式+ x64的系统）Legacy启动模式：（MBR主引导记录分区格式+ Lega...</p>
+    </div>
+</div>
+
+
+    </div>
+    
+</div>
+<div id="preview"></div>
+
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
 
-<p><strong><font size="4">操作步骤：</font></strong></p></div><div class="post-meta"></div></div></div></div></article><div class="container page-navigator-wrapper"><div class="page-navigator"><a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span></div></div><footer id="footer"><div class="container"><div class="bar"><div class="social"><a href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></div><div class="footer">© 2019 <a href="/" rel="nofollow">YuemingBi</a>. Powered by <a rel="nofollow" target="_blank" href="https://hexo.io">Hexo</a>. Theme <a target="_blank" href="https://github.com/lotabout/very-simple">very-simple</a>.</div></div></div></footer><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.css"><script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script><script src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script><script>$(document).ready(function() {
-    $(".fancybox").fancybox();
-});
-</script></body></html>
+</html>
