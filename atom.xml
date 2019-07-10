@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-07-07T06:23:16.238Z</updated>
+  <updated>2019-07-10T07:31:00.042Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Quaternions-Learning-Notes</title>
+    <link href="http://yoursite.com/2019/07/10/Quaternions-Learning-Notes/"/>
+    <id>http://yoursite.com/2019/07/10/Quaternions-Learning-Notes/</id>
+    <published>2019-07-10T06:53:18.000Z</published>
+    <updated>2019-07-10T07:31:00.042Z</updated>
+    
+    <content type="html"><![CDATA[<p>基本概念：<br><img src="https://github.com/YuemingBi/comment-repo/blob/master/image/Quaternions-Learning-Notes/1.png" alt="waitting"></p><p>模长：<br><img src="https://github.com/YuemingBi/comment-repo/blob/master/image/Quaternions-Learning-Notes/2.png" alt="waitting"></p><p>逆：<br><img src="https://github.com/YuemingBi/comment-repo/blob/master/image/Quaternions-Learning-Notes/3.png" alt="waitting"></p><p>复数表示旋转：<br><img src="https://github.com/YuemingBi/comment-repo/blob/master/image/Quaternions-Learning-Notes/4.png" alt="waitting"></p><p>四元数三角函数表示式：<br><img src="https://github.com/YuemingBi/comment-repo/blob/master/image/Quaternions-Learning-Notes/5.png" alt="waitting"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;基本概念：&lt;br&gt;&lt;img src=&quot;https://github.com/YuemingBi/comment-repo/blob/master/image/Quaternions-Learning-Notes/1.png&quot; alt=&quot;waitting&quot;&gt;&lt;/p&gt;
+&lt;p&gt;模
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Machine Learning : ROC and AUC</title>
