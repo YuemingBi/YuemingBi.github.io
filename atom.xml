@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-07-11T06:37:37.979Z</updated>
+  <updated>2019-07-17T01:32:08.584Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,48 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SLAM-Exercise-Ch4</title>
+    <link href="http://yoursite.com/2019/07/17/SLAM-Exercise-Ch4/"/>
+    <id>http://yoursite.com/2019/07/17/SLAM-Exercise-Ch4/</id>
+    <published>2019-07-17T01:08:42.000Z</published>
+    <updated>2019-07-17T01:32:08.584Z</updated>
+    
+    <content type="html"><![CDATA[<p><font size="3">《视觉SLAM十四讲从理论到实践》第四讲课后习题</font><br><img src="https://github.com/YuemingBi/comment-repo/raw/master/image/SLAM-Exercise-Ch4/1.png" alt="waitting"><br><img src="https://github.com/YuemingBi/comment-repo/raw/master/image/SLAM-Exercise-Ch4/1-1.png" alt="waitting"><br><img src="https://github.com/YuemingBi/comment-repo/raw/master/image/SLAM-Exercise-Ch4/1-2.png" alt="waitting"><br><img src="https://github.com/YuemingBi/comment-repo/raw/master/image/SLAM-Exercise-Ch4/2-1.png" alt="waitting"><br><img src="https://github.com/YuemingBi/comment-repo/raw/master/image/SLAM-Exercise-Ch4/2.png" alt="waitting"><br><img src="https://github.com/YuemingBi/comment-repo/raw/master/image/SLAM-Exercise-Ch4/3-1.png" alt="waitting"><br><img src="https://github.com/YuemingBi/comment-repo/raw/master/image/SLAM-Exercise-Ch4/3.png" alt="waitting"><br><img src="https://github.com/YuemingBi/comment-repo/raw/master/image/SLAM-Exercise-Ch4/4.png" alt="waitting"><br><img src="https://github.com/YuemingBi/comment-repo/raw/master/image/SLAM-Exercise-Ch4/4-1-1.png" alt="waitting"><br><img src="https://github.com/YuemingBi/comment-repo/raw/master/image/SLAM-Exercise-Ch4/4-2-1.png" alt="waitting"><br><img src="https://github.com/YuemingBi/comment-repo/raw/master/image/SLAM-Exercise-Ch4/4-1.png" alt="waitting"><br><img src="https://github.com/YuemingBi/comment-repo/raw/master/image/SLAM-Exercise-Ch4/4-2.png" alt="waitting"><br><img src="https://github.com/YuemingBi/comment-repo/raw/master/image/SLAM-Exercise-Ch4/5.png" alt="waitting"><br><img src="https://github.com/YuemingBi/comment-repo/raw/master/image/SLAM-Exercise-Ch4/6.png" alt="waitting"><br><img src="https://github.com/YuemingBi/comment-repo/raw/master/image/SLAM-Exercise-Ch4/7.png" alt="waitting"><br><img src="https://github.com/YuemingBi/comment-repo/raw/master/image/SLAM-Exercise-Ch4/8.png" alt="waitting"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;font size=&quot;3&quot;&gt;《视觉SLAM十四讲从理论到实践》第四讲课后习题&lt;/font&gt;&lt;br&gt;&lt;img src=&quot;https://github.com/YuemingBi/comment-repo/raw/master/image/SLAM-Exercise-Ch4/
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Eigen-Learning-Notes(4)</title>
+    <link href="http://yoursite.com/2019/07/17/Eigen-Learning-Notes-4/"/>
+    <id>http://yoursite.com/2019/07/17/Eigen-Learning-Notes-4/</id>
+    <published>2019-07-17T01:01:54.000Z</published>
+    <updated>2019-07-17T01:05:25.477Z</updated>
+    
+    <content type="html"><![CDATA[<p><font size="3">Eigen-Learning-Notes(4)</font><br>利用Eigen库和Sophus库实现李群SO(3)、SE(3)和李代数so(3)、se(3)的简单构造<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cmath&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">#include&lt;Eigen/Core&gt;</span><br><span class="line">#include&lt;Eigen/Geometry&gt;</span><br><span class="line"></span><br><span class="line">#include&lt;sophus/so3.h&gt;</span><br><span class="line">#include&lt;sophus/se3.h&gt;</span><br><span class="line"></span><br><span class="line">int main(int argc, char** argv)</span><br><span class="line">&#123;</span><br><span class="line">    Eigen::Matrix3d R = Eigen::AngleAxisd (M_PI/2, Eigen::Vector3d (0,0,1)).toRotationMatrix();  // 沿Z轴转90度的旋转矩阵</span><br><span class="line"></span><br><span class="line">    Sophus::SO3 SO3_R(R);             //Sophus::SO(3)可以直接从旋转矩阵构造</span><br><span class="line">    Sophus::SO3 SO3_v(0, 0, M_PI/2);  //亦可从旋转向量构造</span><br><span class="line">    //Sophus::SO3 SO3_v(1,1,1);  //此处的输出并不是1,1,1，所以与旋转向量无关</span><br><span class="line">    Eigen::Quaterniond q(R);          // 或者四元数</span><br><span class="line">    Sophus::SO3 SO3_q(q);</span><br><span class="line">    cout &lt;&lt; &quot;SO3 from matrix: \n&quot; &lt;&lt; SO3_R &lt;&lt; endl;//从输出的形式可以看出，虽然SO3是李群，是旋转矩阵，但是输出形式还是向量（被转化成李代数输出）。输出SO(3)时，以so(3)形式输出</span><br><span class="line">    cout &lt;&lt; &quot;SO3 from vector: &quot; &lt;&lt; SO3_v &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; &quot;SO3 from quaternion &quot; &lt;&lt; SO3_q &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    Eigen::Vector3d so3 = SO3_R.log();  // 使用对数映射获得它的李代数</span><br><span class="line">    cout &lt;&lt; &quot;so3 = &quot; &lt;&lt; so3.transpose() &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; &quot;so3 hat = \n&quot; &lt;&lt; Sophus::SO3::hat(so3) &lt;&lt; endl;  // hat 为向量到反对称矩阵</span><br><span class="line">    cout &lt;&lt; &quot;so3 hat vee = &quot; &lt;&lt; Sophus::SO3::vee(Sophus::SO3::hat(so3)).transpose() &lt;&lt; endl;  //vee为反对称到向量</span><br><span class="line"></span><br><span class="line">    Eigen::Vector3d update_so3 (1e-4, 0, 0);  // 增量扰动模型的更新</span><br><span class="line">    Sophus::SO3 SO3_updated = Sophus::SO3::exp(update_so3) * SO3_R;</span><br><span class="line">    cout &lt;&lt; &quot;SO3_updated = &quot; &lt;&lt; SO3_updated &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    //对SE(3)操作大同小异</span><br><span class="line">    Eigen::Vector3d t (1,0,0);  // 沿X轴平移1</span><br><span class="line">    Sophus::SE3 SE3_Rt (R, t);  // 从R,t构造SE(3)</span><br><span class="line">    Sophus::SE3 SE3_qt (q, t);  //// 从q,t构造SE(3)</span><br><span class="line">    cout &lt;&lt; &quot;SE3 from Rt = \n&quot; &lt;&lt; SE3_Rt &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; &quot;SE3 from qt = \n&quot; &lt;&lt; SE3_qt &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    typedef Eigen::Matrix&lt;double, 6, 1&gt; Vector6d;  // 李代数se(3) 是一个六维向量，方便起见先typedef一下</span><br><span class="line">    Vector6d se3 = SE3_Rt.log();</span><br><span class="line">    cout &lt;&lt; &quot;se3 = &quot; &lt;&lt; se3.transpose() &lt;&lt; endl;   // 观察输出，会发现在Sophus中，se(3)的平移在前，旋转在后.</span><br><span class="line">    cout &lt;&lt; &quot;se3 hat = \n&quot; &lt;&lt; Sophus::SE3::hat(se3) &lt;&lt; endl;  // 同样的，有hat和vee两个算符</span><br><span class="line">    cout &lt;&lt; &quot;se3 vee = &quot; &lt;&lt; Sophus::SE3::vee(Sophus::SE3::hat(se3)).transpose() &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    Vector6d update_se3; //更新量</span><br><span class="line">    update_se3.setZero();</span><br><span class="line">    update_se3(0,0) = 1e-4d;</span><br><span class="line">    cout &lt;&lt; &quot;update_se3 = &quot; &lt;&lt; update_se3.transpose() &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;font size=&quot;3&quot;&gt;Eigen-Learning-Notes(4)&lt;/font&gt;&lt;br&gt;利用Eigen库和Sophus库实现李群SO(3)、SE(3)和李代数so(3)、se(3)的简单构造&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Eigen-Learning-Notes(3)</title>
