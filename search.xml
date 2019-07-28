@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>SLAM Learning Notes</title>
+      <link href="/2019/07/28/SLAM-Learning-Notes/"/>
+      <url>/2019/07/28/SLAM-Learning-Notes/</url>
+      
+        <content type="html"><![CDATA[<p><font size="3">SLAM-ROS</font><br>1.SLAM的四种算法：Gmapping、Karto、Hector、    Cartographer，Navigation的两种方式：Global(全局)，Local(局部)。<br><img src="https://github.com/YuemingBi/comment-repo/raw/master/image/SLAM-Learning-Notes/1.png" alt="waitting"><br>2.<br><img src="https://github.com/YuemingBi/comment-repo/raw/master/image/SLAM-Learning-Notes/2.jpg" alt="waitting"><br>3.里程计(odom)的三种方式：(1)轮子上的编码器(encoder)，(2)视觉里程计(visual)，(3)imu。<br>输入的tf是从里程计(odom)到底盘(base)的坐标转换关系，就是从odom的三种方式中得出来的。<br>输出的tf是从地图(map)到里程计(odom)之间的坐标转换关系，进而知道了从地图(map)到底盘(base)的坐标转换关系，从而实现定位。<br><img src="https://github.com/YuemingBi/comment-repo/raw/master/image/SLAM-Learning-Notes/3.jpg" alt="waitting"><br>4.<br><img src="https://github.com/YuemingBi/comment-repo/raw/master/image/SLAM-Learning-Notes/4.png" alt="waitting"><br>5.odom到base时间长了会有累积误差，slam发布的就是误差修正之后的tf。<br><img src="https://github.com/YuemingBi/comment-repo/raw/master/image/SLAM-Learning-Notes/5.png" alt="waitting"></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Turtlebot2+RplidarA2 Learning Notes</title>
       <link href="/2019/07/28/Turtlebot2-RplidarA2-Learning-Notes/"/>
       <url>/2019/07/28/Turtlebot2-RplidarA2-Learning-Notes/</url>

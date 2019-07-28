@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2019/07/28/SLAM-Learning-Notes/</loc>
+    
+    <lastmod>2019-07-28T06:28:42.120Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2019/07/28/Turtlebot2-RplidarA2-Learning-Notes/</loc>
     
     <lastmod>2019-07-28T05:10:02.973Z</lastmod>
