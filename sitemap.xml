@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2019/07/28/Navigation-Learning-Notes/</loc>
+    
+    <lastmod>2019-07-29T14:10:46.132Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/07/29/ROS-launch/</loc>
+    
+    <lastmod>2019-07-28T22:57:04.502Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2019/07/28/SLAM-Learning-Notes/</loc>
     
     <lastmod>2019-07-28T06:28:42.120Z</lastmod>
